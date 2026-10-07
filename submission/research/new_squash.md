@@ -21,7 +21,7 @@ Implement Order Feature
 git rebase -i HEAD~4
 ```
 
-دا بيجيبلي اخر اربعه 
+دا بيجيبلي اخر اربعه بعد كدا الgit بيفتح شاشة بعل ال pick -- squash - s  وبعد كدا بعمل الmessage الجديده 
 <p>
   <img src="../images/before.png" width="49%" />
   <img src="../images/after_rebase.png" width="49%" />
