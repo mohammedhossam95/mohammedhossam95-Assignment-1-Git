@@ -14,7 +14,7 @@ Implement Order Feature
 git rebase -i HEAD~4
 دا بيجيبلي اخر اربعه 
 <p>
-  <img src="images/before.png" width="49%" />
-  <img src="images/after_rebase.png" width="49%" />
+  <img src="submission/images/before.png" width="49%" />
+  <img src="submission/images/after_rebase.png" width="49%" />
 </p>
 صورتين بيوضوحوا اني كان عندي اربع Commits وتم عملية الدمج لي One Commit 
