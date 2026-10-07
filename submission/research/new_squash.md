@@ -4,15 +4,23 @@
 هيا عمليه بتتنفذ من خلال اوامر تانيه 
 مثال 
 انا دلوقتي شغال علي order feature 
-اول حاجه عملتها اني عملت create order وبعدها عملت commit 
+اول حاجه عملتها 
+```text
+git commit -m "Create Order"
+```
 بعد كدا عملت
-get orders # another Commit, 
-FIlter Orders,
-Sort orders,
+```text
+git commit -m "get orders"
+git commit -m "FIlter Orders"
+git commit -m "Sort orders"
+```
 وهكذا لحد ما خلصت الfeature كلها وعايز اجمعع كل  اللي انا عملته دا في commit واحد 
 Implement Order Feature
 اسهل طريقة تكون باستخدام 
+```text
 git rebase -i HEAD~4
+```
+
 دا بيجيبلي اخر اربعه 
 <p>
   <img src="../images/before.png" width="49%" />
