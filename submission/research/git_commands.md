@@ -90,3 +90,29 @@ git grep "createOrder"
 <p>
   <img src="../images/grep.png" width="70%" />
 </p>
+
+
+### 
+## git blame
+
+ده الامر اللي بيعرفني كل سطر في الملف مين اللي كتبه وامتي وفي انهي commit
+
+مثال
+لقيت سطر في orders.js عامل bug ومش فاهم هو اتكتب ليه
+عايز اعرف مين اللي كتبه عشان اسأله
+```text
+git blame orders.js
+```
+ده بيطلعلي قدام كل سطر ال commit hash واسم اللي كتبه والتاريخ
+
+طب لو الملف كبير وعايز سطور معينة بس؟
+```text
+git blame -L 10,20 orders.js
+```
+ده بيعرضلي من سطر 10 لسطر 20 بس
+
+<p>
+  <img src="../images/blame.png" width="70%" />
+</p>
+صورة بتوضح ناتج git blame
+
