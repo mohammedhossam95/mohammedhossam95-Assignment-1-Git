@@ -178,3 +178,38 @@ git prune -n #For view Before Delete
 git prune    #For delete after Confirm
 ```
 
+## git worktree
+
+ده الامر اللي بيخليني افتح اكتر من branch في نفس الوقت، كل واحد في فولدر لوحده، من غير ما اعمل clone تاني
+
+مثال
+انا في نص شغل ال order feature ومش جاهز اعمل commit، وفجأة جالي bug مستعجل علي ال main
+بدل ما اعمل stash واسيب شغلي
+```text
+git worktree add ../project-hotfix -b hotfix/payment main
+```
+ده بيعملي فولدر جديد فيه branch جديد من ال main، اصلح فيه ال bug وشغلي الاصلي زي ما هو
+
+اشوف ال worktrees اللي عندي
+```text
+git worktree list
+```
+ولما اخلص امسحه
+```text
+git worktree remove ../project-hotfix
+```
+
+<p>
+  <img src="../images/worktree.png" width="70%" />
+</p>
+
+طبايه الفرق بين switch - worktree
+
+بيعمل ايه git switch
+
+بيغير ال Branch اللي شغال عليه في نفس الفولدر
+
+أما git worktree
+
+بيديك فولدر إضافي تشتغل فيه علىBranch تاني من غير ما تسيب شغلك الأصلي.
+
