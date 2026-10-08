@@ -147,3 +147,34 @@ git bisect good a1b2c3d
 git bisect reset
 
 هنا بنهي العمليه كلها وارجع تاني للمكان اللي كنت واقف فيه بعد ما عرف ت المشكله في الcommit 
+
+
+## git shortlog
+
+ده الامر اللي بيلخصلي ال commits ويجمعها باسم كل واحد في الفريق
+
+مثال
+عايز اعرف كل واحد في الفريق عمل كام commit في المشروع
+```text
+git shortlog -sn
+```
+ده بيطلعلي اسم كل واحد وقدامه عدد ال commits بتاعته، مترتبين من الاكتر للاقل
+
+<p>
+  <img src="../images/shortlog.png" width="70%" />
+</p>
+
+
+## git prune
+
+ده الامر اللي بيمسح ال objects اللي مبقاش في حاجة بتوصلها جوه ال .git
+يعني commits مبقتش تبع اي branch وفضلت واخدة مساحة علي الفاضي ولكن في الغالب مش بشغله بايدي، لان git gc بيشغله لوحده وهو بينضف ال repo
+
+مثال
+عملت branch للتجربة وعملت عليه commits كتير وبعدين مسحته
+ال commits دي لسه موجودة جوه ال .git ومحدش بيستخدمها من خلال الcommands دي بعرف الاول ايه اللي مش محتاجهه وبعد كدا اممسح للتأكيد 
+```text
+git prune -n #For view Before Delete
+git prune    #For delete after Confirm
+```
+
