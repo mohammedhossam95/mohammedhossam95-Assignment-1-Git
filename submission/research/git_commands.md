@@ -29,7 +29,6 @@ git help -a
   <img src="../images/help-3.png" width="29%" />
 </p>
 
-##
 ## git Clean
 
 
@@ -73,7 +72,6 @@ git clean -fdx
   <img src="../images/clean_after.png" width="49%" />
 </p>
 
-##
 
 ## git grep
 
@@ -92,7 +90,7 @@ git grep "createOrder"
 </p>
 
 
-### 
+
 ## git blame
 
 ده الامر اللي بيعرفني كل سطر في الملف مين اللي كتبه وامتي وفي انهي commit
@@ -115,8 +113,8 @@ git blame -L 10,20 orders.js
   <img src="../images/blame.png" width="70%" />
 </p>
 
-##
-###
+
+
 ## git bisect
 
 الامر دا بيشبه لحد كبير جدا ال binary search tree بيعمل بحث على commit معين كان سبب في حدوث المشكله بعده وعشان يحدد ده  بأقل عدد ممكن من الاختبارات.
@@ -132,17 +130,20 @@ git blame -L 10,20 orders.js
 
 ممكن تفتح الـ 50 Commit وتراجعهم واحد واحد، بس ده هياخد وقت كبير.
 
-هنا بييجي دور git bisect  من خلال بعض الاوامر 
+هنا بييجي دور git bisect  من خلال بعض الاوامر
+
 git bisect start
 
 انا من هنا بقول للgit عايز ابدأ البحث 
+
 git bisect bad
 
 هنا بقوله ان دا الcommit  اللي فيه المشكله 
+
 git bisect good a1b2c3d
 
 هنا بقوله ان دا الcommit دا كان شغال كويس 
+
 git bisect reset
+
 هنا بنهي العمليه كلها وارجع تاني للمكان اللي كنت واقف فيه بعد ما عرف ت المشكله في الcommit 
-
-
