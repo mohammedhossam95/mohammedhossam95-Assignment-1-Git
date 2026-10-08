@@ -203,7 +203,7 @@ git worktree remove ../project-hotfix
   <img src="../images/worktree.png" width="70%" />
 </p>
 
-طبايه الفرق بين switch - worktree
+طب ايه الفرق بين switch - worktree
 
 بيعمل ايه git switch
 
@@ -213,3 +213,43 @@ git worktree remove ../project-hotfix
 
 بيديك فولدر إضافي تشتغل فيه علىBranch تاني من غير ما تسيب شغلك الأصلي.
 
+
+
+
+## git verify-commit
+
+ده الامر اللي بيتأكد ان ال commit معمول عليه توقيع GPG سليم، يعني اللي عمله هو فعلا الشخص المكتوب اسمه والاسم والإيميل وحدهم مش دليل. لازم تتحقق من التوقيع ومن إن المفتاح المستخدم فعلًا يخص الشخص السليم.
+
+
+طب ليه محتاج ده؟
+لان اي حد يقدر يكتب اي اسم وايميل في git config ويعمل commit باسم حد تاني
+
+مثال
+قبل ما انزل release عايز اتأكد ان اخر commit فعلا من ال team lead
+```text
+git verify-commit a1b2c3d
+```
+لو التوقيع سليم بيقولي Good signature، ولو ال commit مش متوقع مش بيطلع حاجة وبيرجع error
+وعشان ال commit يبقي متوقع لازم يتعمل ب
+```text
+git commit -S -m "message"
+```
+
+## git filter-repo
+
+ده بيعدل ال history كله مرة واحدة، زي اني امسح ملف من كل ال commits القديمة وهو مش امر موجود جوه ال git، ده tool لوحده لازم اسطبه الاول
+```text
+brew install git-filter-repo
+```
+
+مثال
+رفعت ملف .env فيه password بتاع ال database بالغلط من شهر
+لو مسحته ب commit جديد هيفضل موجود في ال commits القديمة واي حد يقدر يرجعله
+```text
+git filter-repo --path .env --invert-paths
+```
+ده بيمسح الملف من كل ال history
+
+خلي بالك
+كل ال commit hashes بتتغير، فلازم اعمل force push وكل الفريق يعمل clone من جديد
+ولازم اغير ال password برضو، لانه اتكشف خلاص
